@@ -1,0 +1,33 @@
+<template name="bouncesAccordian">
+  {{> main}}
+  {{> search}}
+</template>
+
+<template name="search">
+  <div class="container-fluid" style="width:70%;background-color:#003030;position:absolute;top:10%;
+    left: 15%;border: 2px solid;border-radius: 25px;">
+    <div class="container" style="width:90%;position:relative; margin-top:2%;">
+      <div class="row">
+          <div id="custom-search-input">
+            <div class="input-group col-md-5">
+                {{> EasySearch.Input index=bouncesIndex attributes=inputAttributes}}
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+      <div class="panel-group" id="bounces_list" style="width:100%;position:relative; margin-top:2%;">
+        {{#EasySearch.Each index=bouncesIndex}}
+          {{> bounce}}
+        {{/EasySearch.Each}}
+      </div>
+    </div>
+  </div>
+  {{#EasySearch.IfNoResults index=bouncesIndex}}
+    <div class="no-results">No results found!</div>
+  {{/EasySearch.IfNoResults}}
+</template>

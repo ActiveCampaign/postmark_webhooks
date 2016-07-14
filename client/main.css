@@ -1,0 +1,141 @@
+/* CSS declarations go here */
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (max-width: 1920px) {
+    /* For desktop: */
+
+    .col-md-5 {width: 41.66%;}
+
+    #custom-search-input {
+      width:200% !important;
+      margin: 0 auto;
+      padding-bottom: 3%;
+      position: relative;
+      margin-left: 960px;
+    }
+
+    #custom-search-input.input {
+      width:300%;
+      margin: 0 auto;
+      position: relative;
+      margin-left: 960px;
+    }
+
+    .panel-group {
+      position:absolute;
+      top: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    /* For laptop: */
+
+    #custom-search-input {
+      width:200% !important;
+      margin: 0 auto;
+      padding-bottom: 3%;
+      position: relative;
+      margin-left: 960px;
+    }
+
+    #custom-search-input.input {
+      width:300%;
+      margin: 0 auto;
+      position: relative;
+      margin-left: 960px;
+    }
+
+    .panel-group {
+      position:absolute;
+      top: 10px !important;
+    }
+}
+
+body {
+  background-color: white;
+}
+
+.navbar-fixed-top {
+  background-color: #001A1A;
+}
+
+.navbar-default .navbar-brand {
+    color: #BFD4D9;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #BFD4D9;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #BFD4D9;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+
+#custom-search-input {
+  width:100%;
+  margin: 0 auto;
+  clear: both;
+  padding-bottom: 3%;
+}
+
+#custom-search-input.input {
+  width:100%;
+  margin: 0 auto;
+  clear: both;
+}
+
+div.input-group.col-md-5 {
+  width:50%;
+}
+div.input-group.col-md-5 > input {
+  width:100%;
+  height:34px;
+  border: 2px black;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  text-align:center;
+}
+
+.panel-title {
+  text-align:center;
+}
+
+.row {
+  margin: 0 auto;
+  clear: both;
+  width:80%;
+}
+
+.container-fluid {
+  min-height: 100%;
+}
+
+.nav-tabs li.active a{
+  background-color:#001A1A;
+  text-decoration: none;
+  color:white;
+}
+
+.nav-tabs li > a{
+  background-color:white;
+  text-decoration: none;
+  color:black;
+}
+.nav-tabs li > a:hover{
+  background-color:#001A1A;
+  text-decoration: none;
+  color:white;
+}
+
+.nav-tabs li.active > a:hover{
+  background-color:#001A1A;
+  text-decoration: none;
+  color:white;
+}

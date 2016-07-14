@@ -1,0 +1,39 @@
+<!-- HTML for displaying an inbound message -->
+<template name="inbound_message">
+  <div class="panel panel-default" style="width:80%; margin:auto;">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#inbound_messages_list" href="#{{this._id}}">
+            <b>{{Subject}}</b> from <b>{{From}}</b> on <b>{{formatDate Date}}</b> at <b>{{getTime Date}}</b>
+        </div>
+      </div>
+      <div id="{{this._id}}" class="panel-collapse collapse out">
+          <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#JSON{{this._id}}" aria-controls="JSON" role="tab" data-toggle="tab">JSON</a></li>
+              <li role="presentation"><a href="#HtmlBody{{this._id}}" aria-controls="HtmlBody" role="tab" data-toggle="tab">HTML</a></li>
+              <li role="presentation"><a href="#HtmlSource{{this._id}}" aria-controls="HtmlSource" role="tab" data-toggle="tab">HTML Source</a></li>
+              <li role="presentation"><a href="#StrippedTextReply{{this._id}}" aria-controls="StrippedTextReply" role="tab" data-toggle="tab">Stripped Text Reply</a></li>
+              <li role="presentation"><a href="#Headers{{this._id}}" aria-controls="Headers" role="tab" data-toggle="tab">Headers</a></li>
+          </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="JSON{{this._id}}">
+                <pre>{{json this}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="HtmlBody{{this._id}}">
+                {{{HtmlBody}}}
+              </div>
+              <div role="tabpanel" class="tab-pane" id="HtmlSource{{this._id}}">
+                <pre>{{HtmlBody}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="StrippedTextReply{{this._id}}">
+                <pre>{{StrippedTextReply}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="Headers{{this._id}}">
+                <pre>{{json Headers}}</pre>
+              </div>
+            </div>
+
+          </div>
+      </div>
+  </div>
+</template>

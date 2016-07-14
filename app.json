@@ -1,0 +1,15 @@
+{
+  "name": "Postmark Web Hooks",
+  "description": "App for using Postmark web hooks.",
+  "logo": "https://raw.githubusercontent.com/wildbit/postmark-demos/master/public/logo.png",
+  "keywords": ["postmark", "meteor", "webhook"],
+  "addons": [
+    "mongolab",
+    "postmark:10k"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
+    }
+  ]
+}
