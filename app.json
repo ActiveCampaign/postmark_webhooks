@@ -7,9 +7,7 @@
     "mongolab",
     "postmark:10k"
   ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
-    }
-  ]
+  "buildpacks": {
+    "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
+  }
 }

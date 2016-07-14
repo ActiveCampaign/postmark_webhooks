@@ -1,5 +1,5 @@
 {
-  "name": "postmark-hooks",
+  "name": "postmark_hooks",
   "private": true,
   "scripts": {
     "start": "meteor run"
