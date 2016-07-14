@@ -8,6 +8,8 @@
     "postmark:10k"
   ],
   "buildpacks": [
-    "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
+    {
+      "url": "https://github.com/AdmitHub/meteor-buildpack-horse.git"
+    }
   ]
 }
