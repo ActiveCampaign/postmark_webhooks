@@ -12,6 +12,6 @@
   },
   "addons": [
     "mongolab",
-    "postmark10k"
+    "postmark:10k"
   ]
 }
