@@ -2,41 +2,27 @@
 
 # Postmark Hooks
 
-This project is a quick start app you can use to host your own URLs to receive, store, process, and view webhooks sent from Postmark. It is written in Meteor.js. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). This README includes all the instructions you need to host the app on Heroku (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html). Head [here](https://nameless-forest-14615.herokuapp.com/bounces) to play with a demo instance of the app.
+This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html). Head [here](https://nameless-forest-14615.herokuapp.com/bounces) to play with a demo instance of the app.
 
 ## Features
 
-- Receive webhook POSTs (well formatted JSON) for Bounces, Opens, and Inbound messages with minimal development/configuration effort
+- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, and Inbound messages, with minimal development/configuration effort on your part
 - Automatically send emails (using Postmark) to yourself and/or others when you receive a new bounce, open, or inbound message
 - Searchable so you can easily find and view details of a specific bounce, open event, or inbound message
 
 ## Prerequisites
 
-- Postmark account - sign up at https://account.postmarkapp.com/sign_up. Postmark provides you with 25,000 free credits and you do not need to add a card to sign up.
-
-- [Meteor.js](https://www.meteor.com)
-
-Mac OS X:
-
-`curl https://install.meteor.com/ | sh`
-
-Windows:
-
-Download the installer from https://www.meteor.com/install
+- Sign Up for Heroku [here](https://signup.heroku.com)
 
 ## Getting Started
-
-- TODO
-
-## Example Deployment w/ Heroku
 
 - TODO
 
 ## Built With
 
 * [Atom](https://atom.io)
-* Meteor.js
-* Postmark.js
+* [Meteor.js](https://www.meteor.com)
+* [Postmark.js](https://www.npmjs.com/package/postmark)
 
 ## Security
 
@@ -45,7 +31,7 @@ Download the installer from https://www.meteor.com/install
 - Insecure removed so the database cannot be accessed from the client (browser dev tools)
 - Option to receive emails if an unauthorized source attempts to post to your URL
 
-## Customize Notification Settings
+## Customize Your Notification Settings
 
 This app allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message. Open up server/settings.js to view and modify the settings. Use the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark). You can send emails based on the following events:
 
@@ -84,14 +70,13 @@ Set the From email addresses for your notifications to email addresses that you 
 
 * **Patrick Graham**
 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Meteor community
+* Meteor Community
 * Mark Otto | Bootstrap
 * Tom Coleman | Iron Router & Atmosphere
 * Matteo De Micheli | Easy Search
