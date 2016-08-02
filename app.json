@@ -3,6 +3,7 @@
   "description": "An open-source quickstart app built with meteor.js for using Postmark's webhooks",
   "repository": "https://github.com/pgraham3/postmark_webhooks/master/",
   "keywords": ["meteor", "postmark", "webhooks"],
+  "logo": "https://raw.githubusercontent.com/wildbit/postmark-demos/master/public/logo.png",
   "env": {
     "BUILDPACK_URL": "https://github.com/AdmitHub/meteor-buildpack-horse.git",
     "ROOT_URL": {
