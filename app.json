@@ -7,7 +7,7 @@
   "env": {
     "BUILDPACK_URL": "https://github.com/AdmitHub/meteor-buildpack-horse.git",
     "ROOT_URL": {
-      "description": "The full URL of your Postmark Webhooks app (by default, http://appname.herokuapp.com)."
+      "description": "The full URL of your Postmark Webhooks app (by default, https://appname.herokuapp.com)."
     }
   },
   "addons": [
