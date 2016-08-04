@@ -33,6 +33,10 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17415658/9df102a6-5a3f-11e6-88f8-215cd4f21d55.gif)
 
+## Set Inbound URL
+
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17416886/29da6406-5a45-11e6-866b-1ab24cfa8c28.gif)
+
 
 ## Included Heroku Add-Ons
 
