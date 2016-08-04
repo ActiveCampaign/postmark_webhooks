@@ -1,6 +1,6 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pgraham3/postmark_webhooks/tree/master)
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417973/f7a5f526-5a4a-11e6-9e23-d48b9bc4fcde.gif)
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17418107/95874d6c-5a4b-11e6-9608-6f0e03820bfb.gif)
 
 # Postmark Hooks
 
