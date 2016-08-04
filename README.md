@@ -85,7 +85,7 @@ This app allows for you to send emails using Postmark when you receive a bounce,
 * Open Event received
 * Unauthorized (not from Postmark's IP addresses) POST received to one of your webhook URLs
 
-By default, notifications will **not** be sent for all events unless you disable them by changing their value to ``false``. Sending notifications for events can be turned on/off for each of these event types by changing these fields to true/false:
+By default, notifications will **not** be sent for events unless you enable them by changing their value to ``true``. Sending notifications for events can be turned on/off for each of these event types by changing these fields to true/false:
 
 * ``SendBouncesNotifications`` (for bounces)
 * ``SendOpensNotifications`` (for open events)
