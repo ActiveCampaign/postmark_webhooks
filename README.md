@@ -37,6 +37,9 @@ Our next step is to set the new URLs we have available as your settings for your
 - https://yourname.herokuapp.com/webhooks/opens
 - https://yourname.herokuapp.com/webhooks/inbound
 
+If you prefer to use an existing Postmark account you have for sending email notifications, you can remove the Postmark plugin that was added to the app during deployment. Otherwise, access your Postmark in Heroku:
+
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417590/f2e34810-5a48-11e6-9d52-e2bad4969b6b.png)
 
 ## Set Bounce URL
 
