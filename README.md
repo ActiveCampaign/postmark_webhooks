@@ -31,7 +31,7 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ## Set Bounce URL
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17415586/67e79756-5a3f-11e6-88d4-eec61428fc70.gif)
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17415658/9df102a6-5a3f-11e6-88f8-215cd4f21d55.gif)
 
 
 ## Included Heroku Add-Ons
