@@ -29,6 +29,11 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17385099/43fc172c-5995-11e6-8833-7e4a4adb63fc.png)
 
+## Set Bounce URL
+
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17415586/67e79756-5a3f-11e6-88d4-eec61428fc70.gif)
+
+
 ## Included Heroku Add-Ons
 
 Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. Additional credits can be purchased as necessary and do not expire. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage.
