@@ -31,7 +31,7 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ## Set Bounce URL
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17415658/9df102a6-5a3f-11e6-88f8-215cd4f21d55.gif)
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417062/3ef135bc-5a46-11e6-8a2d-bd6767abd99e.gif)
 
 ## Set Inbound URL
 
