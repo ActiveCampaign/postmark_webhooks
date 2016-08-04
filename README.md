@@ -53,6 +53,8 @@ If you prefer to use an existing Postmark account you have for sending email not
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417344/b2aa3a48-5a47-11e6-8fd7-7d773c252f06.gif)
 
+Make sure you have Open Tracking enabled to use this webhook. See [this help article](http://support.postmarkapp.com/article/803-how-do-i-enable-open-tracking) for steps on enabling this setting.
+
 ## Set Inbound URL
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17416886/29da6406-5a45-11e6-866b-1ab24cfa8c28.gif)
