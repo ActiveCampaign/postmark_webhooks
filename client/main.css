@@ -131,13 +131,13 @@ div.input-group.col-md-5 > input {
   color:black;
 }
 .nav-tabs li > a:hover{
-  background-color:white;
+  background-color:black;
   text-decoration: none;
   color:white;
 }
 
 .nav-tabs li.active > a:hover{
-  background-color:white;
+  background-color:black;
   text-decoration: none;
   color:white;
 }
