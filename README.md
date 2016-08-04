@@ -29,24 +29,25 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17385099/43fc172c-5995-11e6-8833-7e4a4adb63fc.png)
 
+## Configure Postmark Account
+
+Our next step is to set the new URLs we have available as your settings for your Postmark webhooks. Setting these URLs tells Postmark where to send the webhook messages.
+
 ## Set Bounce URL
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417062/3ef135bc-5a46-11e6-8a2d-bd6767abd99e.gif)
+
+## Set Opens URL
+
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417344/b2aa3a48-5a47-11e6-8fd7-7d773c252f06.gif)
 
 ## Set Inbound URL
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17416886/29da6406-5a45-11e6-866b-1ab24cfa8c28.gif)
 
-
 ## Included Heroku Add-Ons
 
 Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. Additional credits can be purchased as necessary and do not expire. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage.
-
-## Configure Postmark Account
-
-Our next step is to set the new URLs we have available as your settings for your Postmark webhooks. Setting these URLs tells Postmark where to send the webhook messages.
-
-[TODO]
 
 ## Built With
 
