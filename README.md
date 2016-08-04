@@ -31,7 +31,12 @@ This project is a quick start app you can use to host your own URLs for receivin
 
 ## Configure Postmark Account
 
-Our next step is to set the new URLs we have available as your settings for your Postmark webhooks. Setting these URLs tells Postmark where to send the webhook messages.
+Our next step is to set the new URLs we have available as your settings for your Postmark webhooks. Setting these URLs tells Postmark where to send the webhook messages. URLs for the webhooks are in the following format:
+
+- https://yourname.herokuapp.com/webhooks/bounces
+- https://yourname.herokuapp.com/webhooks/opens
+- https://yourname.herokuapp.com/webhooks/inbound
+
 
 ## Set Bounce URL
 
