@@ -67,15 +67,15 @@ body {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: white;
+    color: black;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: white;
+    color: black;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: white;
+    color: black;
 }
 
 #custom-search-input {
