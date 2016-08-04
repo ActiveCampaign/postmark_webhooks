@@ -58,20 +58,20 @@ body {
 }
 
 .navbar-fixed-top {
-  background-color: #001A1A;
+  background-color: #FED90A;
 }
 
 .navbar-default .navbar-brand {
-    color: #BFD4D9;
+    color: black;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #BFD4D9;
+    color: white;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #BFD4D9;
+    color: white;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -129,13 +129,13 @@ div.input-group.col-md-5 > input {
   color:black;
 }
 .nav-tabs li > a:hover{
-  background-color:#001A1A;
+  background-color:white;
   text-decoration: none;
   color:white;
 }
 
 .nav-tabs li.active > a:hover{
-  background-color:#001A1A;
+  background-color:white;
   text-decoration: none;
   color:white;
 }
