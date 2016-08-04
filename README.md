@@ -1,5 +1,7 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pgraham3/postmark_webhooks/tree/master)
 
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417973/f7a5f526-5a4a-11e6-9e23-d48b9bc4fcde.gif)
+
 # Postmark Hooks
 
 This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html). Head [here](https://postmarkhooks.herokuapp.com/bounces) to play with a demo instance of the app. Note that the demo app for you to play around with before deploying is highly ephemeral and only meant for quick tests. Data is removed often to ensure a clean playground for anyone who wants to try it out.
