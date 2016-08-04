@@ -2,7 +2,7 @@
 
 # Postmark Hooks
 
-This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html). Head [here](https://postmarkhooks.herokuapp.com/bounces) to play with a demo instance of the app.
+This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html). Head [here](https://postmarkhooks.herokuapp.com/bounces) to play with a demo instance of the app. Note that the demo app for you to play around with before deploying is highly ephemeral and only meant for quick tests. Data is removed often to ensure a clean playground for anyone who wants to try it out.
 
 ## Features
 
@@ -55,7 +55,7 @@ If you prefer to use an existing Postmark account you have for sending email not
 
 ## Included Heroku Add-Ons
 
-Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. Additional credits can be purchased as necessary and do not expire. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage.
+Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. Additional credits can be purchased as necessary and do not expire. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage. Upgrade your mLab MongoDB plan if you plan to use this heavily in production as their sandbox instances do not include redundancy for their databases.
 
 ## Built With
 
