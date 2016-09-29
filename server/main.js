@@ -14,13 +14,6 @@ import inbound_messages from './inbound_messages.js'
 let postmark = require("postmark");
 let client = new postmark.Client(settings.ServerAPIToken);
 
-Router.configureBodyParsers = function() {
-    Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
-        extended: true,
-        limit: '30mb'
-    }), {where: 'server'});
-};
-
 // Receive POST w/ Bounce Information to /webhook/bounces.
 // See http://developer.postmarkapp.com/developer-bounce-webhook.html
 // for more Information
