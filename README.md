@@ -111,6 +111,12 @@ By default, notifications will **not** be sent for events unless you enable them
 
 Set the From email addresses for your notifications to email addresses that you have added as Sender Signatures in Postmark to be sure you are able to send notification emails. These notification emails can be sent to any recipient.
 
+## Note on Inbound Message Size Limits
+
+MongoDB has an inherent limit of ~16.8 MB, which means documents (entries in a MongoDB collection) cannot be larger than this amount. If you receive an inbound webhook notification larger than 16.8 MB due to attachment size, it will not be stored in your collection or display in the Inbound tab and you will see a MongoDB error in your Heroku Logs:
+
+``Error: Document exceeds maximum allowed bson size of 16777216 bytes``
+
 ## Authors
 
 * **Patrick Graham**
