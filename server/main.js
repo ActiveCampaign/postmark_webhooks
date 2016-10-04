@@ -5,6 +5,8 @@ import bounces from './bounces.js';
 import opens from './opens.js'
 import inbound_messages from './inbound_messages.js'
 
+Router.onBeforeAction(Iron.Router.bodyParser.json({limit: '50mb'}));
+
 // Uses Postmark Node.js to send emails.
 // Replace <server key> with your Server API Token.
 // You can retrieve this by logging into Postmark,
