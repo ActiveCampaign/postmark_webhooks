@@ -83,6 +83,7 @@ Router.route('/webhooks/inbound', function() {
   if (headers["x-forwarded-for"]) {
     console.log("located IP as: " + headers["x-forwarded-for"]);
   }
+  console.log("Received Inbound Webhook Full JSON: " + JSON.stringify(stored_json));
 
   // verify POST is coming from Postmark
   if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
