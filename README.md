@@ -74,6 +74,19 @@ Deploying to Heroku sets you up with a Postmark account for sending email notifi
 - Insecure removed so the database cannot be accessed from the client (browser dev tools)
 - Option to receive emails if an unauthorized source attempts to post to your URL
 
+## Modifying Your Application's Codebase
+
+Once you have deployed your own instance of the application to Heroku, you will need to get a local version of the repository where you can make edits and push back to Heroku. If you simply clone your Heroku app's repo, you will end up with an empty repository locally. You can get a local copy of the source code using the following commands:
+
+1. ``heroku git:clone -a YourAppName``
+2. ``cd YourAppName``
+3. ``git remote add origin https://github.com/pgraham3/postmark_webhooks``
+4. ``git pull origin master``
+
+Once you have the local repo for your application, you can then make changes and commit them in the usual fashion. Once you are ready to push your local changes to your Heroku application, use this command:
+
+``git push heroku master``
+
 ## Customize Your Notification Settings
 
 This app allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message. Open up server/settings.js to view and modify the settings. Use the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark). You can send emails based on the following events:
