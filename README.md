@@ -83,7 +83,7 @@ Once you have deployed your own instance of the application to Heroku, you will 
 3. ``git remote add origin https://github.com/pgraham3/postmark_webhooks``
 4. ``git pull origin master``
 
-Once you have the local repo for your application, you can then make changes and commit them in the usual fashion. Once you are ready to push your local changes to your Heroku application, use this command:
+Once you have the local repo for your application, you can then make changes and commit them in the usual fashion. When you are ready to push your local changes to your Heroku application, use this command:
 
 ``git push heroku master``
 
