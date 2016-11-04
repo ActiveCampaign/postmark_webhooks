@@ -59,7 +59,7 @@ Make sure you have Open Tracking enabled to use this webhook. See [this help art
 
 ## Included Heroku Add-Ons
 
-Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. Additional credits can be purchased as necessary and do not expire. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage. Upgrade your mLab MongoDB plan if you plan to use this heavily in production as their sandbox instances do not include redundancy for their databases.
+Deploying to Heroku sets you up with a Postmark account for sending email notifications from the app that includes 10,000 free emails per month. You will also receive an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage. Upgrade your mLab MongoDB plan if you plan to use this heavily in production as their sandbox instances do not include redundancy for their databases.
 
 ## Built With
 
