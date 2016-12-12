@@ -49,6 +49,30 @@ Router.route('/webhooks/bounces', function() {
       });
     }
 
+    // get HTML/TextBody/Sender of bounced email for forwarding to original sender
+    if (settings.SendBouncesToSender) {
+
+      // send original email to the sender when a bounce is received
+      let senderNotification = function(details) {
+        client.sendEmail({
+          "From": settings.BouncesFromEmailAddress,
+          "To": details.From,
+          "Subject": "Bounce Occurred for Email Sent to " + stored_json.Email,
+          "HTMLBody": details.HtmlBody,
+          "TextBody": details.TextBody,
+          "Attachments": details.Attachments
+        });
+      }
+
+      // get the message details using the Messages API and then call senderNotification() with the details if successful
+      client.getOutboundMessageDetails(stored_json.MessageID, function(error, result) {
+        if(error) {
+            console.error("Unable to get Message Details: " + error.message);
+            return;
+        }
+        senderNotification(result); // send bounced email to original sender
+      });
+    }
   } else {
     // log unauthorized POST and where it came from
     console.log("Unauthorized POST received from " + clientIP + " and rejected.");
