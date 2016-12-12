@@ -109,6 +109,7 @@ By default, notifications will **not** be sent for events unless you enable them
   "SendOpensNotifications": false,
   "SendInboundNotifications": false,
   "SendViolationsNotifications": false,
+  "SendBouncesToSender": false,
   "BouncesFromEmailAddress": "yourbouncesnotificationemail@yourdomain.com",
   "OpensFromEmailAddress": "youropensnotificationemail@yourdomain.com",
   "InboundFromEmailAddress": "yourinboundnotificationsemail@yourdomain",
