@@ -121,7 +121,7 @@ By default, notifications will **not** be sent for events unless you enable them
 }
 ```
 
-Set the From email addresses for your notifications to email addresses that you have added as Sender Signatures in Postmark to be sure you are able to send notification emails. These notification emails can be sent to any recipient.
+Set the From email addresses for your notifications to email addresses that you have added as Sender Signatures or are on your verified domains in Postmark to be sure you are able to send notification emails. These notification emails can be sent to any recipient.
 
 ## Note on Inbound Message Size Limits
 
