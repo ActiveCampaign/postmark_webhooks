@@ -10,13 +10,14 @@ If you have not already done so, sign up for a Postmark account [here](https://a
 
 ## Features
 
-- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, and Inbound messages, with minimal development/configuration effort on your part
-- Automatically send emails (using Postmark) to yourself and/or others when you receive a new bounce, open, or inbound message
-- Searchable so you can easily find and view details of a specific bounce, open event, or inbound message
+- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, and Inbound messages, with minimal development/configuration effort on your part.
+- Automatically send notification emails (using Postmark) to yourself and/or others when you receive a new bounce, open, or inbound message.
+- Searchable so you can easily find and view details of a specific bounce, open event, or inbound message.
 
 ## Prerequisites
 
-- Sign Up for Heroku [here](https://signup.heroku.com)
+- [Postmark Account](https://account.postmarkapp.com/sign_up)
+- [Heroku Account](https://signup.heroku.com)
 
 ## Getting Started
 
