@@ -85,7 +85,9 @@ Once you have the local repo for your application, you can then make changes and
 
 ## Customize Your Notification Settings
 
-This app allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message. Open up server/settings.js to view and modify the settings. Use the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark). You can send emails based on the following events:
+In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message. Open up server/settings.js to view and modify the settings.
+
+Use the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark). You can send emails based on the following events:
 
 * Bounce received
 * Inbound Message received
