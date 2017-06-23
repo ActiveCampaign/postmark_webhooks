@@ -90,7 +90,7 @@ Once you have the local repo for your application, you can then make changes and
 
 In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message.
 
-Grab the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark) and add it a Heroku config variable named POSTMARK_API_TOKEN. You can do this in the Heroku UI Settings for your app or using this command from the Heroku CLI:
+Grab the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark) and add it as a Heroku config variable named POSTMARK_API_TOKEN. You can do this in the Heroku UI Settings for your app or using this command from the Heroku CLI:
 
 ``heroku config:set POSTMARK_API_TOKEN=YourTokenValue``
 
