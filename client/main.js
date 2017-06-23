@@ -5,6 +5,7 @@ import './main.html';
 import './bounces.html';
 import './inbound_message.html';
 import './inbound_messages.html';
+import './delivered_events.html'
 import './open_events.html';
 import '../imports/api/bounces.js';
 import '../imports/api/inbound.js';
