@@ -14,7 +14,12 @@ Router.onBeforeAction(Iron.Router.bodyParser.json({limit: '50mb'}));
 // https://www.npmjs.com/package/postmark for more information
 
 let postmark = require("postmark");
-let client = new postmark.Client(process.env.POSTMARK_API_TOKEN);
+if (process.env.POSTMARK_API_TOKEN) {
+  let client = new postmark.Client(process.env.POSTMARK_API_TOKEN);
+} else {
+  let client = new postmark.Client('POSTMARK_API_TEST');
+}
+
 
 // Receive POST w/ Bounce Information to /webhook/bounces.
 // See http://developer.postmarkapp.com/developer-bounce-webhook.html
@@ -198,6 +203,58 @@ Router.route('/webhooks/opens', function() {
   }
 }, {where: 'server'});
 
+// Receive POST w/ open tracking information to /webhook/inbound.
+// See http://developer.postmarkapp.com/developer-open-webhook.html
+// for more Information
+
+Router.route('/webhooks/delivered', function() {
+
+  let stored_json = this.request.body;
+  let headers = this.request.headers;
+  let clientIP = headers["x-forwarded-for"];
+  stored_json.created_at = new Date();
+
+  // log request headers
+  console.log("Delivery Event Received For: " + stored_json.Recipient);
+  console.log("Headers: " + JSON.stringify(headers));
+  console.log("located client's IP as: " + headers["x-forwarded-for"]);
+
+  // verify POST is coming from Postmark
+  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+    // return 200 repsonse
+    this.response.writeHead(200);
+    this.response.end("OK");
+
+    // add new open event to collection of open events
+    DeliveryList.insert(stored_json);
+
+    // send email w/ Postmark when open event received
+    if (settings.SendDeliveredNotifications) {
+      client.sendEmail({
+        "From": settings.DeliveredFromEmailAddress,
+        "To": settings.DeliveredToEmailAddress,
+        "Subject": "Delivered Event Received!",
+        "HTMLBody": "<pre>\nJSON: " + JSON.stringify(stored_json, null, 2) + "</pre>"
+      });
+    }
+
+  } else {
+    // log unauthorized POST and where it came from
+    console.log("Unauthorized POST received from " + clientIP + " and rejected.");
+
+    if (settings.SendViolationsNotifications) {
+      client.sendEmail({
+        "From": settings.ViolationsFromEmailAddress,
+        "To": settings.ViolationsToEmailAddress,
+        "Subject": "Unauthorized POST received from IP " + clientIP,
+        "HTMLBody": "<pre>\nRejected: " + JSON.stringify(stored_json, null, 2) + "</pre>"
+      });
+    }
+    this.response.writeHead(403);
+    this.response.end();
+  }
+}, {where: 'server'});
+
 Meteor.startup(() => {
   /*---------Bounces---------*/
 
@@ -258,4 +315,15 @@ Meteor.startup(() => {
           OpensList.insert(open);
         });
   }
+
+  /*---------Delivery---------*/
+
+  DeliveryList = new Mongo.Collection('deliveries');
+
+  // ensure open tracking event document in collection has MessageID, Recipient, and DeliveredAt fields
+  DeliveryList.schema = new SimpleSchema({
+    MessageID: {type: String},
+    Recipient: {type: String},
+    DeliveredAt: {type: String}
+  });
 });
