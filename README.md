@@ -55,7 +55,7 @@ Make sure you have Open Tracking enabled to use this webhook. See [this help art
 
 ## Set Delivery URL
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417062/3ef135bc-5a46-11e6-8a2d-bd6767abd99e.gif)
+![alt tag](https://user-images.githubusercontent.com/16660335/27501632-5fca2a38-5823-11e7-9ef1-7736005033d6.gif)
 
 ## Set Inbound URL
 
