@@ -1,5 +1,4 @@
 export default {
-    "ServerAPIToken": "YourServerAPIToken",
     "SendBouncesNotifications": false,
     "SendOpensNotifications": false,
     "SendInboundNotifications": false,
