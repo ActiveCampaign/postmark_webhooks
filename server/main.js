@@ -14,7 +14,7 @@ Router.onBeforeAction(Iron.Router.bodyParser.json({limit: '50mb'}));
 // https://www.npmjs.com/package/postmark for more information
 
 let postmark = require("postmark");
-let client = new postmark.Client(settings.ServerAPIToken);
+let client = new postmark.Client(process.env.POSTMARK_API_TOKEN);
 
 // Receive POST w/ Bounce Information to /webhook/bounces.
 // See http://developer.postmarkapp.com/developer-bounce-webhook.html
