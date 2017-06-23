@@ -4,15 +4,15 @@
 
 # Postmark Hooks
 
-This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js due to the framework's ability to quickly display server side data without needing a refresh in the browser. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhooks](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhooks](http://developer.postmarkapp.com/developer-bounce-webhook.html), and [Inbound webhooks](http://developer.postmarkapp.com/developer-inbound-webhook.html).
+This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js due to the framework's ability to quickly display server side data without needing a refresh in the browser. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), [Delivery Webhook](http://developer.postmarkapp.com/developer-delivery-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html).
 
 If you have not already done so, sign up for a Postmark account [here](https://account.postmarkapp.com/sign_up).
 
 ## Features
 
-- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, and Inbound messages, with minimal development/configuration effort on your part.
-- Automatically send notification emails (using Postmark) to yourself and/or others when you receive a new bounce, open, or inbound message.
-- Searchable so you can easily find and view details of a specific bounce, open event, or inbound message.
+- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, Delivery events, and Inbound messages, with minimal development/configuration effort on your part.
+- Automatically send notification emails (using Postmark) to yourself and/or others when you receive a new bounce, open, delivery event, or inbound message.
+- Searchable so you can easily find and view details of a specific bounce, open event, delivery event, or inbound message.
 
 ## Prerequisites
 
@@ -40,6 +40,7 @@ Our next step is to set in Postmark the new URLs we have available for receiving
 
 - https://yourappname.herokuapp.com/webhooks/bounces
 - https://yourappname.herokuapp.com/webhooks/opens
+- https://yourappname.herokuapp.com/webhooks/delivered
 - https://yourappname.herokuapp.com/webhooks/inbound
 
 ## Set Bounce URL
@@ -52,11 +53,15 @@ Our next step is to set in Postmark the new URLs we have available for receiving
 
 Make sure you have Open Tracking enabled to use this webhook. See [this help article](http://support.postmarkapp.com/article/803-how-do-i-enable-open-tracking) for steps on enabling this setting.
 
+## Set Delivery URL
+
+![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417062/3ef135bc-5a46-11e6-8a2d-bd6767abd99e.gif)
+
 ## Set Inbound URL
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17416886/29da6406-5a45-11e6-866b-1ab24cfa8c28.gif)
 
-## Included Heroku Add-Ons
+## Included Heroku Add-On(s)
 
 Deploying to Heroku sets you up with an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) account with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage. Upgrade your mLab MongoDB plan if you plan to use this heavily in production as their sandbox instances do not include redundancy for their databases.
 
@@ -71,7 +76,7 @@ Deploying to Heroku sets you up with an [mLab MongoDB](https://devcenter.heroku.
 - Only [Postmark's listed IPs](http://support.postmarkapp.com/article/800-ips-for-firewalls) for webhooks can POST to URLs built by this app. Any other received request is ignored and no document is added to the collections in the database.
 - Received data is also validated against a schema to ensure appropriate data received and stored as a document in its associated collection.
 - Insecure removed so the database cannot be accessed from the client (browser dev tools)
-- Option to receive emails if an unauthorized source attempts to post to your URL
+- Option to receive notification emails if an unauthorized source attempts to post to your URL
 
 ## Modifying Your Application's Codebase
 
@@ -88,7 +93,7 @@ Once you have the local repo for your application, you can then make changes and
 
 ## Customize Your Notification Settings
 
-In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message.
+In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, delivery event, or inbound message.
 
 Grab the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark) and add it as a Heroku config variable named POSTMARK_API_TOKEN. You can do this in the Heroku UI Settings for your app or using this command from the Heroku CLI:
 
@@ -99,6 +104,7 @@ You can then send emails based on the following events:
 * Bounce received
 * Inbound Message received
 * Open Event received
+* Delivery Event received
 * Unauthorized (not from Postmark's IP addresses) POST received to one of your webhook URLs
 
 Open up server/settings.js to view and modify the settings.
@@ -114,16 +120,19 @@ By default, notifications will **not** be sent for events unless you enable them
   "SendBouncesNotifications": false,
   "SendOpensNotifications": false,
   "SendInboundNotifications": false,
+  "SendDeliveredNotifications": false,
   "SendViolationsNotifications": false,
   "SendBouncesToSender": false,
-  "BouncesFromEmailAddress": "yourbouncesnotificationemail@yourdomain.com",
-  "OpensFromEmailAddress": "youropensnotificationemail@yourdomain.com",
-  "InboundFromEmailAddress": "yourinboundnotificationsemail@yourdomain",
-  "BouncesToEmailAddress": "pmnotifications+bounces@yourdomain.com",
-  "OpensToEmailAddress": "pmnotifications+opens@yourdomain.com",
-  "InboundToEmailAddress": "pmnotifications+inbound@yourdomain.com",
-  "ViolationsFromEmailAddress": "pmhooksviolations@yourdomain.com",
-  "ViolationsToEmailAddress": "pmnotifications+violations@yourdomain.com"
+  "BouncesFromEmailAddress": "pmnotifications+bounces@yourdomain.com",
+  "OpensFromEmailAddress": "pmnotifications+opens@yourdomain.com",
+  "InboundFromEmailAddress": "pmnotifications+inbound@yourdomain.com",
+  "DeliveredFromEmailAddress": "pmnotifications+delivered@yourdomain.com",
+  "OpensToEmailAddress": "email@yourdomain.com",
+  "InboundToEmailAddress": "email@yourdomain.com",
+  "BouncesToEmailAddress": "email@yourdomain.com",
+  "DeliveredToEmailAddress": "email@yourdomain.com",
+  "ViolationsFromEmailAddress": "pmnotifications+violations@yourdomain.com",
+  "ViolationsToEmailAddress": "email@yourdomain.com"
 }
 ```
 
