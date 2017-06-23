@@ -88,14 +88,20 @@ Once you have the local repo for your application, you can then make changes and
 
 ## Customize Your Notification Settings
 
-In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message. Open up server/settings.js to view and modify the settings.
+In addition to receiving and processing Postmark webhooks, this app also allows for you to send emails using Postmark when you receive a bounce, open event, or inbound message.
 
-Use the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark). You can send emails based on the following events:
+Grab the Server API Token for the Server you wish to send notifications from in Postmark (found in Credentials when viewing the server in Postmark) and add it a Heroku config variable named POSTMARK_API_TOKEN. You can do this in the Heroku UI Settings for your app or using this command from the Heroku CLI:
+
+``heroku config:set POSTMARK_API_TOKEN=YourTokenValue``
+
+You can then send emails based on the following events:
 
 * Bounce received
 * Inbound Message received
 * Open Event received
 * Unauthorized (not from Postmark's IP addresses) POST received to one of your webhook URLs
+
+Open up server/settings.js to view and modify the settings.
 
 By default, notifications will **not** be sent for events unless you enable them by changing their value to ``true``. Sending notifications for events can be turned on/off for each of these event types by changing these fields to true/false:
 
@@ -105,7 +111,6 @@ By default, notifications will **not** be sent for events unless you enable them
 * ``SendViolationsNotifications`` (for unauthorized POSTs to your URLs)
 ```javascript
 {
-  "ServerAPIToken": "YourServerAPIToken",
   "SendBouncesNotifications": false,
   "SendOpensNotifications": false,
   "SendInboundNotifications": false,
