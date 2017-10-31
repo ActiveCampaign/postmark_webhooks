@@ -1,0 +1,42 @@
+<!-- HTML for displaying a click event -->
+<template name="click">
+  <div class="panel panel-default" style="width:80%; margin:auto;">
+      <div class="panel-heading">
+        <div class="panel-title" data-toggle="collapse" data-parent="#clicks_list" href="#{{this._id}}">
+            <b>{{Recipient}}</b> Clicked a link in an Email on <b>{{formatDate ReceivedAt}}</b> at <b>{{getTime ReceivedAt}}</b>
+        </div>
+      </div>
+      <div id="{{this._id}}" class="panel-collapse collapse out">
+          <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#JSON{{this._id}}" aria-controls="JSON" role="tab" data-toggle="tab">JSON</a></li>
+              <li role="presentation"><a href="#Client{{this._id}}" aria-controls="Client" role="tab" data-toggle="tab">Client</a></li>
+              <li role="presentation"><a href="#GEO{{this._id}}" aria-controls="GEO" role="tab" data-toggle="tab">GeoLocation</a></li>
+              <li role="presentation"><a href="#TAGS{{this._id}}" aria-controls="Tags" role="tab" data-toggle="tab">Tags</a></li>
+              <li role="presentation"><a href="#OS{{this._id}}" aria-controls="OS" role="tab" data-toggle="tab">OS</a></li>
+              <li role="presentation"><a href="#OriginalLink{{this._id}}" aria-controls="OriginalLink" role="tab" data-toggle="tab">Original Link</a></li>
+          </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="JSON{{this._id}}">
+                <pre>{{json this}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="Client{{this._id}}">
+                <pre>{{json Client}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="GEO{{this._id}}">
+                <pre>{{json Geo}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="TAGS{{this._id}}">
+                <pre>{{json Tag}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="OS{{this._id}}">
+                <pre>{{json OS}}</pre>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="OriginalLink{{this._id}}">
+                <pre>{{json OriginalLink}}</pre>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</template>

@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Postmark } from 'postmark';
 import settings from './settings.js'
 import bounces from './bounces.js';
-import opens from './opens.js'
+import opens from './opens.js';
 import inbound_messages from './inbound_messages.js'
 
 Router.onBeforeAction(Iron.Router.bodyParser.json({limit: '50mb'}));
@@ -22,7 +22,7 @@ if (process.env.POSTMARK_API_TOKEN) {
 
 
 // Receive POST w/ Bounce Information to /webhook/bounces.
-// See http://developer.postmarkapp.com/developer-bounce-webhook.html
+// See https://postmarkapp.com/developer/webhooks/bounce-webhook
 // for more Information
 
 Router.route('/webhooks/bounces', function() {
@@ -151,8 +151,8 @@ Router.route('/webhooks/inbound', function() {
   }
 }, {where: 'server'});
 
-// Receive POST w/ open tracking information to /webhook/inbound.
-// See http://developer.postmarkapp.com/developer-open-webhook.html
+// Receive POST w/ open tracking information to /webhook/opens.
+// See https://postmarkapp.com/developer/webhooks/open-tracking-webhook
 // for more Information
 
 Router.route('/webhooks/opens', function() {
@@ -203,8 +203,60 @@ Router.route('/webhooks/opens', function() {
   }
 }, {where: 'server'});
 
-// Receive POST w/ open tracking information to /webhook/inbound.
-// See http://developer.postmarkapp.com/developer-open-webhook.html
+// Receive POST w/ click tracking information to /webhook/clicks.
+// See https://postmarkapp.com/developer/webhooks/click-webhook
+// for more Information
+
+Router.route('/webhooks/clicks', function() {
+
+  let stored_json = this.request.body;
+  let headers = this.request.headers;
+  let clientIP = headers["x-forwarded-for"];
+  stored_json.created_at = new Date();
+
+  // log request headers
+  console.log("Click Event Received For: " + stored_json.Recipient);
+  console.log("Headers: " + JSON.stringify(headers));
+  console.log("located client's IP as: " + headers["x-forwarded-for"]);
+
+  // verify POST is coming from Postmark
+  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+    // return 200 repsonse
+    this.response.writeHead(200);
+    this.response.end("OK");
+
+    // add new click event to collection of click events
+    ClicksList.insert(stored_json);
+
+    // send email w/ Postmark when click event received
+    if (settings.SendClicksNotifications) {
+      client.sendEmail({
+        "From": settings.ClicksFromEmailAddress,
+        "To": settings.ClicksToEmailAddress,
+        "Subject": "Click Event Received!",
+        "HTMLBody": "<pre>\nJSON: " + JSON.stringify(stored_json, null, 2) + "</pre>"
+      });
+    }
+
+  } else {
+    // log unauthorized POST and where it came from
+    console.log("Unauthorized POST received from " + clientIP + " and rejected.");
+
+    if (settings.SendViolationsNotifications) {
+      client.sendEmail({
+        "From": settings.ViolationsFromEmailAddress,
+        "To": settings.ViolationsToEmailAddress,
+        "Subject": "Unauthorized POST received from IP " + clientIP,
+        "HTMLBody": "<pre>\nRejected: " + JSON.stringify(stored_json, null, 2) + "</pre>"
+      });
+    }
+    this.response.writeHead(403);
+    this.response.end();
+  }
+}, {where: 'server'});
+
+// Receive POST w/ delivery event information to /webhook/delivered.
+// See https://postmarkapp.com/developer/webhooks/delivery-webhook
 // for more Information
 
 Router.route('/webhooks/delivered', function() {
@@ -225,10 +277,10 @@ Router.route('/webhooks/delivered', function() {
     this.response.writeHead(200);
     this.response.end("OK");
 
-    // add new open event to collection of open events
+    // add new delivered event to collection of open events
     DeliveryList.insert(stored_json);
 
-    // send email w/ Postmark when open event received
+    // send email w/ Postmark when delivered event received
     if (settings.SendDeliveredNotifications) {
       client.sendEmail({
         "From": settings.DeliveredFromEmailAddress,
@@ -325,5 +377,16 @@ Meteor.startup(() => {
     MessageID: {type: String},
     Recipient: {type: String},
     DeliveredAt: {type: String}
+  });
+
+  /*---------Clicks---------*/
+
+  ClicksList = new Mongo.Collection('clicks');
+
+  // ensure click tracking event document in collection has MessageID, Recipient, and OriginalLink fields
+  ClicksList.schema = new SimpleSchema({
+    MessageID: {type: String},
+    Recipient: {type: String},
+    OriginalLink: {type: String}
   });
 });

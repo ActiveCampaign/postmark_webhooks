@@ -5,11 +5,14 @@ import './main.html';
 import './bounces.html';
 import './inbound_message.html';
 import './inbound_messages.html';
-import './delivered_events.html'
+import './delivered_events.html';
+import './click.html';
+import './clicks.html';
 import './open_events.html';
 import '../imports/api/bounces.js';
 import '../imports/api/inbound.js';
 import '../imports/api/opens.js';
+import '../imports/api/clicks.js';
 
 Meteor.startup(function() {
 
