@@ -1,4 +1,4 @@
-// bounces, inbound messages, delivery events, and open events publications
+// bounces, inbound messages, delivery events, clicks and open events publications
 if (Meteor.isServer) {
 
   Meteor.publish('bounces', function() {
@@ -11,6 +11,10 @@ if (Meteor.isServer) {
 
   Meteor.publish('opens', function() {
     return OpensList.find({}, {sort: {ReceivedAt: 1}});
+  });
+
+  Meteor.publish('clicks', function() {
+    return ClicksList.find({}, {sort: {ReceivedAt: 1}});
   });
 
   Meteor.publish('deliveries', function() {
