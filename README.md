@@ -51,7 +51,12 @@ Our next step is to set in Postmark the new URLs we have available for receiving
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417344/b2aa3a48-5a47-11e6-8fd7-7d773c252f06.gif)
 
-Make sure you have Open Tracking enabled to use this webhook. See [this help article](http://support.postmarkapp.com/article/803-how-do-i-enable-open-tracking) for steps on enabling this setting.
+Make sure you have Open Tracking enabled to use this webhook. See [this help article](https://postmarkapp.com/support/article/803-how-do-i-enable-open-tracking) for steps on enabling this setting.
+
+## Set Clicks URL
+![alt tag](https://user-images.githubusercontent.com/16660335/32241147-a25dce8a-be2c-11e7-8f26-f9802374b01a.gif)
+
+Make sure you have Link Tracking enabled to use this webhook. See [this help article](https://postmarkapp.com/support/article/1058-how-do-i-enable-link-tracking) for steps on enabling this setting.
 
 ## Set Delivery URL
 
@@ -104,6 +109,7 @@ You can then send emails based on the following events:
 * Bounce received
 * Inbound Message received
 * Open Event received
+* Click Event received
 * Delivery Event received
 * Unauthorized (not from Postmark's IP addresses) POST received to one of your webhook URLs
 
@@ -113,21 +119,25 @@ By default, notifications will **not** be sent for events unless you enable them
 
 * ``SendBouncesNotifications`` (for bounces)
 * ``SendOpensNotifications`` (for open events)
+* ``SendClicksNotifications`` (for click events)
 * ``SendInboundNotifications`` (for inbound messages)
 * ``SendViolationsNotifications`` (for unauthorized POSTs to your URLs)
 ```javascript
 {
   "SendBouncesNotifications": false,
   "SendOpensNotifications": false,
+  "SendClicksNotifications": false,
   "SendInboundNotifications": false,
   "SendDeliveredNotifications": false,
   "SendViolationsNotifications": false,
   "SendBouncesToSender": false,
   "BouncesFromEmailAddress": "pmnotifications+bounces@yourdomain.com",
   "OpensFromEmailAddress": "pmnotifications+opens@yourdomain.com",
+  "ClicksFromEmailAddress": "pmnotifications+opens@yourdomain.com",
   "InboundFromEmailAddress": "pmnotifications+inbound@yourdomain.com",
   "DeliveredFromEmailAddress": "pmnotifications+delivered@yourdomain.com",
   "OpensToEmailAddress": "email@yourdomain.com",
+  "ClicksToEmailAddress": "email@yourdomain.com",
   "InboundToEmailAddress": "email@yourdomain.com",
   "BouncesToEmailAddress": "email@yourdomain.com",
   "DeliveredToEmailAddress": "email@yourdomain.com",
