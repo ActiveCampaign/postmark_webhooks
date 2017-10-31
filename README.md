@@ -4,15 +4,15 @@
 
 # Postmark Hooks
 
-This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js due to the framework's ability to quickly display server side data without needing a refresh in the browser. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), [Delivery Webhook](http://developer.postmarkapp.com/developer-delivery-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html).
+This project is a quick start app you can use to host your own URLs for receiving, storing, processing, and viewing webhooks sent from [Postmark](http://postmarkapp.com). It is written in Meteor.js due to the framework's ability to quickly display server side data without needing a refresh in the browser. Be sure to read the [Postmark webhooks documentation](http://developer.postmarkapp.com/developer-webhooks-overview.html). Use the deploy to Heroku button (you can host it somewhere else if you want, like [Galaxy](https://www.meteor.com/hosting)) and begin taking advantage of Postmark's [Open tracking webhook](http://developer.postmarkapp.com/developer-open-webhook.html), [Bounce webhook](http://developer.postmarkapp.com/developer-bounce-webhook.html), [Click webhook](https://postmarkapp.com/developer/webhooks/click-webhook), [Delivery Webhook](http://developer.postmarkapp.com/developer-delivery-webhook.html), and [Inbound webhook](http://developer.postmarkapp.com/developer-inbound-webhook.html).
 
 If you have not already done so, sign up for a Postmark account [here](https://account.postmarkapp.com/sign_up).
 
 ## Features
 
-- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, Delivery events, and Inbound messages, with minimal development/configuration effort on your part.
-- Automatically send notification emails (using Postmark) to yourself and/or others when you receive a new bounce, open, delivery event, or inbound message.
-- Searchable so you can easily find and view details of a specific bounce, open event, delivery event, or inbound message.
+- Receive webhook POSTs (well formatted JSON) from Postmark for Bounces, Opens, Clicks, Delivery events, and Inbound messages, with minimal development/configuration effort on your part.
+- Automatically send notification emails (using Postmark) to yourself and/or others when you receive a new bounce, open, click, delivery event, or inbound message.
+- Searchable so you can easily find and view details of a specific bounce, open event, click event, delivery event, or inbound message.
 
 ## Prerequisites
 
@@ -40,6 +40,7 @@ Our next step is to set in Postmark the new URLs we have available for receiving
 
 - https://yourappname.herokuapp.com/webhooks/bounces
 - https://yourappname.herokuapp.com/webhooks/opens
+- https://yourappname.herokuapp.com/webhooks/clicks
 - https://yourappname.herokuapp.com/webhooks/delivered
 - https://yourappname.herokuapp.com/webhooks/inbound
 
