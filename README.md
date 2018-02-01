@@ -1,4 +1,4 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pgraham3/postmark_webhooks/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/wildbit/postmark_webhooks/tree/master)
 
 <img width="148" height="148" align="right" alt="Postmark Webhooks Logo" src="https://postmarkapp.com/assets/icons/_148x148_crop_top-center/webhooks-logo@2x.png">
 
