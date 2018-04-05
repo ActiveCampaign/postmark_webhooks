@@ -42,36 +42,27 @@ If you have not already done so, sign up for a Postmark account [here](https://a
 
 ## Configure Postmark Account
 
-Our next step is to set in Postmark the new URLs we have available for receiving webhooks. Setting these URLs tells Postmark where to send the webhook messages. URLs for the webhooks are in the following format:
+Our next step is to configure our server(s) in Postmark with the new URLs we have available for receiving webhooks. Setting these URLs tells in Postmark determines where to send the webhook events. Use the following URLs, where yourappname.herokuapp.com is replaced with your webhook receiving app's root domain.
 
-- https://yourappname.herokuapp.com/webhooks/bounces
-- https://yourappname.herokuapp.com/webhooks/opens
-- https://yourappname.herokuapp.com/webhooks/clicks
-- https://yourappname.herokuapp.com/webhooks/delivered
-- https://yourappname.herokuapp.com/webhooks/inbound
+- Bounces: https://yourappname.herokuapp.com/webhooks/bounces
+- Opens: https://yourappname.herokuapp.com/webhooks/opens
+- Clicks: https://yourappname.herokuapp.com/webhooks/clicks
+- Delivery: https://yourappname.herokuapp.com/webhooks/delivered
+- Inbound: https://yourappname.herokuapp.com/webhooks/inbound
 
-## Set Bounce URL
+## Set URL for each webhook type
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417062/3ef135bc-5a46-11e6-8a2d-bd6767abd99e.gif)
+From your server's *Webhooks* tab in Postmark, follow these steps for each webhook type you want to use.
 
-## Set Opens URL
+1. Click *Add webhook*
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17417344/b2aa3a48-5a47-11e6-8fd7-7d773c252f06.gif)
+![alt tag](https://user-images.githubusercontent.com/16660335/38372988-fab834ba-38a4-11e8-8124-f2b073b3bd6b.png)
 
-Make sure you have Open Tracking enabled to use this webhook. See [this help article](https://postmarkapp.com/support/article/803-how-do-i-enable-open-tracking) for steps on enabling this setting.
+2. Enter in the appropriate URL for that event (use your Bounces webhook URL when setting up the Bounces webhook, for example).
 
-## Set Clicks URL
-![alt tag](https://user-images.githubusercontent.com/16660335/32241147-a25dce8a-be2c-11e7-8f26-f9802374b01a.gif)
+![alt tag](https://user-images.githubusercontent.com/16660335/38373082-31bb2bfc-38a5-11e8-8c24-0294fdf86619.png)
 
-Make sure you have Link Tracking enabled to use this webhook. See [this help article](https://postmarkapp.com/support/article/1058-how-do-i-enable-link-tracking) for steps on enabling this setting.
-
-## Set Delivery URL
-
-![alt tag](https://user-images.githubusercontent.com/16660335/27501632-5fca2a38-5823-11e7-9ef1-7736005033d6.gif)
-
-## Set Inbound URL
-
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17416886/29da6406-5a45-11e6-866b-1ab24cfa8c28.gif)
+3. Click *Save webhook*
 
 ## Included Heroku Add-On(s)
 
