@@ -34,8 +34,8 @@ Router.route('/webhooks/bounces', function() {
   console.log("Bounce Received (Postmark Bounce ID): " + stored_json.ID);
   console.log("Headers: " + JSON.stringify(headers));
 
-  // verify POST is coming from Postmark
-  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+  // verify POST is coming from Postmark or localhost
+  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
 
     // return 200 repsonse
     this.response.writeHead(200);
@@ -114,8 +114,8 @@ Router.route('/webhooks/inbound', function() {
   }
   console.log("Received Inbound Webhook Full JSON: " + JSON.stringify(stored_json));
 
-  // verify POST is coming from Postmark
-  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+  // verify POST is coming from Postmark or localhost
+  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
@@ -167,8 +167,8 @@ Router.route('/webhooks/opens', function() {
   console.log("Headers: " + JSON.stringify(headers));
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
-  // verify POST is coming from Postmark
-  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+  // verify POST is coming from Postmark or localhost
+  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
@@ -219,8 +219,9 @@ Router.route('/webhooks/clicks', function() {
   console.log("Headers: " + JSON.stringify(headers));
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
-  // verify POST is coming from Postmark
-  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+  // verify POST is coming from Postmark or localhost
+  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
@@ -271,8 +272,8 @@ Router.route('/webhooks/delivered', function() {
   console.log("Headers: " + JSON.stringify(headers));
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
-  // verify POST is coming from Postmark
-  if (clientIP == "50.31.156.104" || clientIP == "50.31.156.105" || clientIP == "50.31.156.106" || clientIP == "50.31.156.107" || clientIP == "50.31.156.108" || clientIP == "50.31.156.6") {
+  // verify POST is coming from Postmark or localhost
+  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");

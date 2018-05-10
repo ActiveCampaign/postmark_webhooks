@@ -1,6 +1,6 @@
 // route for displaying bounces
 Router.route('/bounces', {
-    template: 'bouncesAccordian',
+    template: 'bouncesAccordion',
     title: 'Bounces',
     subscriptions: function() {
       return Meteor.subscribe('bounces');

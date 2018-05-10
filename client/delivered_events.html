@@ -28,7 +28,9 @@
       </div>
     </div>
   </div>
-  {{#EasySearch.IfNoResults index=deliveredIndex}}
-    <div class="no-results">No results found!</div>
-  {{/EasySearch.IfNoResults}}
+  <div class="row">
+    <div class="col text-center shadow-sm p-3 mb-5 bg-white rounded">
+      {{> EasySearch.Pagination index=deliveredIndex maxPages=5}}
+    </div>
+  </div>
 </template>

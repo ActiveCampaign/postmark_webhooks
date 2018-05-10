@@ -10,7 +10,7 @@ BouncesListIndex = new EasySearch.Index({
 });
 
 // pull bounces from collection for populating accordian/index
-Template.bouncesAccordian.helpers({
+Template.bouncesAccordion.helpers({
     bounces: function() {
       return BouncesList.find().fetch();
     }

@@ -19,7 +19,6 @@
           </div>
         </div>
     	</div>
-
       <div class="panel-group" id="inbound_list" style="width:100%;position:relative; margin-top:2%;">
         {{#EasySearch.Each index=inboundIndex}}
           {{> inbound_message}}
@@ -27,7 +26,9 @@
       </div>
     </div>
   </div>
-  {{#EasySearch.IfNoResults index=inboundIndex}}
-    <div class="no-results">No results found!</div>
-  {{/EasySearch.IfNoResults}}
+  <div class="row">
+    <div class="col text-center shadow-sm p-3 mb-5 bg-white rounded">
+      {{> EasySearch.Pagination index=inboundIndex maxPages=5}}
+    </div>
+  </div>
 </template>

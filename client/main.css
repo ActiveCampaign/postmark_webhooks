@@ -146,3 +146,27 @@ div.input-group.col-md-5 > input {
   background-color: black !important;
   border-color: black !important;
 }
+
+.pagination {
+  height: 36px;
+  margin: 18px 0;
+}
+
+.pagination ul {
+  display: inline-block;
+}
+
+.pagination .page {
+  float: left;
+  background: white;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-left-width: 0;
+}
+
+li.page.disabled.current {
+  background: lightgrey;
+  padding: 0 14px;
+}
