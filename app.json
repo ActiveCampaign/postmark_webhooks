@@ -2,15 +2,21 @@
   "name": "Postmark Webhooks",
   "description": "An open-source quickstart app built with meteor.js for using Postmark's webhooks",
   "repository": "https://github.com/pgraham3/postmark_webhooks/master/",
-  "keywords": ["meteor", "postmark", "webhooks", "email", "inbound"],
+  "keywords": [
+    "meteor",
+    "postmark",
+    "webhooks",
+    "email",
+    "inbound"
+  ],
   "logo": "https://raw.githubusercontent.com/wildbit/postmark-demos/master/public/logo.png",
   "env": {
     "BUILDPACK_URL": "https://github.com/AdmitHub/meteor-buildpack-horse.git",
     "ROOT_URL": {
       "description": "The full URL of your Postmark Webhooks app (by default, https://appname.herokuapp.com)."
+    },
+    "MONGODB_URI": {
+      "description": "Connection string for MongoDB cluster."
     }
-  },
-  "addons": [
-    "mongolab"
-  ]
+  }
 }
