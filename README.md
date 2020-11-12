@@ -23,6 +23,7 @@ If you have not already done so, sign up for a Postmark account [here](https://a
 ## Prerequisites
 
 - [Postmark Account](https://account.postmarkapp.com/sign_up)
+- [MongoDB Atlas Account](https://www.mongodb.com/cloud/atlas/register)
 - [Heroku Account](https://signup.heroku.com)
 
 ## Getting Started
@@ -32,11 +33,23 @@ If you have not already done so, sign up for a Postmark account [here](https://a
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17383869/2bd1eb66-598d-11e6-81ea-688aa3bedb4a.png)
 
-- Use the custom name to enter in your ROOT_URL for the Heroku app:
+- Enter in your custom app's domain for `ROOT_URL`:
 
-![alt tag](https://cloud.githubusercontent.com/assets/16660335/17383895/4c0c025e-598d-11e6-8c39-26b9b020b4eb.png)
+![alt tag](https://user-images.githubusercontent.com/16660335/98881443-ded4ea80-243e-11eb-9342-3c9342441fcd.png)
 
-- Once you have entered in your custom name and ROOT_URL, you can proceed to deploy the app to Heroku by clicking Deploy for Free. Once completed, click View to open your new app on the web.
+Make sure to update your Atlas username, password, and database name in the connection string copied from Atlas.
+
+- Create a database in Atlas and name it `webhooks`
+
+- Add collections to the database in Atlas (`bounces`, `clicks`, `opens`, `deliveries`, `inbound`):
+
+![alt tag](https://user-images.githubusercontent.com/16660335/98881478-f4e2ab00-243e-11eb-863c-b8d70a8122fe.png)
+
+- Use your MongoDB connection string from Atlas for the config variable `MONGODB_URI`:
+
+![alt tag](https://user-images.githubusercontent.com/16660335/98881584-32473880-243f-11eb-8470-e8e741dc2484.png)
+
+- Once you have entered in your custom name, `MONGODB_URI`, and `ROOT_URL`, you can proceed to deploy the app to Heroku by clicking Deploy for Free. Once completed, click View to open your new app on the web.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/16660335/17385099/43fc172c-5995-11e6-8833-7e4a4adb63fc.png)
 
@@ -64,13 +77,8 @@ From your server's *Webhooks* tab in Postmark, follow these steps for each webho
 
 3. Click *Save webhook*
 
-## Included Heroku Add-On(s)
-
-Deploying to Heroku sets you up with an [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab) account with their free sandbox plan. You can upgrade your mLab MongoDB plan in Heroku if you need additional storage. Upgrade your mLab MongoDB plan if you plan to use this heavily in production as their sandbox instances do not include redundancy for their databases.
-
 ## Built With
 
-* [Atom](https://atom.io)
 * [Meteor.js](https://www.meteor.com)
 * [Postmark.js](https://www.npmjs.com/package/postmark)
 

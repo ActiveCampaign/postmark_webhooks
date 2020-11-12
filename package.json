@@ -2,10 +2,10 @@
   "name": "postmark_hooks",
   "private": true,
   "scripts": {
-    "start": "meteor --release 1.5.1"
+    "start": "meteor --release 1.11.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
+    "@babel/runtime": "^7.12.5",
     "core-js": "^2.4.1",
     "meteor-node-stubs": "^0.2.3",
     "postmark": "^1.4.1"

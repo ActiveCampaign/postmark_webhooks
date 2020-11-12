@@ -5,6 +5,8 @@ import bounces from './bounces.js';
 import opens from './opens.js';
 import inbound_messages from './inbound_messages.js'
 
+const authorizedIps = ["3.134.147.250", "50.31.156.6", "50.31.156.77", "18.217.206.57", "127.0.0.1"]
+
 Router.onBeforeAction(Iron.Router.bodyParser.json({limit: '50mb'}));
 
 // Uses Postmark Node.js to send emails.
@@ -35,7 +37,7 @@ Router.route('/webhooks/bounces', function() {
   console.log("Headers: " + JSON.stringify(headers));
 
   // verify POST is coming from Postmark or localhost
-  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+  if (authorizedIps.includes(clientIP)) {
 
     // return 200 repsonse
     this.response.writeHead(200);
@@ -115,7 +117,7 @@ Router.route('/webhooks/inbound', function() {
   console.log("Received Inbound Webhook Full JSON: " + JSON.stringify(stored_json));
 
   // verify POST is coming from Postmark or localhost
-  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+  if (authorizedIps.includes(clientIP)) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
@@ -168,7 +170,7 @@ Router.route('/webhooks/opens', function() {
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
   // verify POST is coming from Postmark or localhost
-  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+  if (authorizedIps.includes(clientIP)) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
@@ -220,7 +222,7 @@ Router.route('/webhooks/clicks', function() {
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
   // verify POST is coming from Postmark or localhost
-  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+  if (authorizedIps.includes(clientIP)) {
 
     // return 200 repsonse
     this.response.writeHead(200);
@@ -273,7 +275,7 @@ Router.route('/webhooks/delivered', function() {
   console.log("located client's IP as: " + headers["x-forwarded-for"]);
 
   // verify POST is coming from Postmark or localhost
-  if (clientIP == "50.31.156.6" || clientIP == "127.0.0.1" ) {
+  if (authorizedIps.includes(clientIP)) {
     // return 200 repsonse
     this.response.writeHead(200);
     this.response.end("OK");
