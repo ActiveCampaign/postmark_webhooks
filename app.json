@@ -1,7 +1,7 @@
 {
   "name": "Postmark Webhooks",
   "description": "An open-source quickstart app built with meteor.js for using Postmark's webhooks",
-  "repository": "https://github.com/pgraham3/postmark_webhooks/replace-mlab-addon/",
+  "repository": "https://github.com/pgraham3/postmark_webhooks/master/",
   "keywords": [
     "meteor",
     "postmark",
