@@ -37,7 +37,7 @@ If you have not already done so, sign up for a Postmark account [here](https://a
 
 ![alt tag](https://user-images.githubusercontent.com/16660335/98881443-ded4ea80-243e-11eb-9342-3c9342441fcd.png)
 
-Make sure to update your Atlas username, password, and database name in the connection string copied from Atlas.
+Make sure to update your Atlas db username, password, and database name in the connection string copied from Atlas.
 
 - Create a database in Atlas and name it `webhooks`
 
@@ -45,9 +45,15 @@ Make sure to update your Atlas username, password, and database name in the conn
 
 ![alt tag](https://user-images.githubusercontent.com/16660335/98881478-f4e2ab00-243e-11eb-863c-b8d70a8122fe.png)
 
+- Create an access user for the database in the Atlas cluster:
+
+![alt tag](https://user-images.githubusercontent.com/16660335/104212459-184bb700-53ea-11eb-8392-b1e50d8da815.png)
+
 - Use your MongoDB connection string from Atlas for the config variable `MONGODB_URI`:
 
 ![alt tag](https://user-images.githubusercontent.com/16660335/98881584-32473880-243f-11eb-8470-e8e741dc2484.png)
+
+Make sure to replace the username/password for your DB access user and also update the <dbname> to match your database's name (webhooks) in the connection string.
 
 - Once you have entered in your custom name, `MONGODB_URI`, and `ROOT_URL`, you can proceed to deploy the app to Heroku by clicking Deploy for Free. Once completed, click View to open your new app on the web.
 
