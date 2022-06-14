@@ -182,3 +182,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Matteo De Micheli | Easy Search
 * Charlie DeTar | Meteor.js buildpack for Heroku
 * Rico Sta. Cruz | NProgress
+  
+  ActiveCampaign, 2022
